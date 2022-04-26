@@ -78,3 +78,8 @@ input:focus {
   width: fit-content;
   margin-right: 1rem;
 }
+
+.strike-through {
+  text-decoration: line-through;
+  color: rgba(150, 150, 150, 1);
+}

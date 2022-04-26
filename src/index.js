@@ -52,12 +52,15 @@ mainContainer.innerHTML = `<div class="row">
 </div>`;
 
 taskList.forEach((e) => {
-  let isChecked = null;
-  if (e.completed === true) isChecked = 'checked';
+  let isChecked, strikeThrough;
+  if (e.completed === true) {
+    isChecked = 'checked';
+    strikeThrough = 'strike-through';
+  }
 
   mainContainer.innerHTML += `<div class="row">
   <input class="checkbox" type="checkbox" ${isChecked}>
-  <p>${e.description}</p>
+  <p class="${strikeThrough}">${e.description}</p>
   <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
   </div>`;
 });
