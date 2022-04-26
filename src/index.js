@@ -1,20 +1,7 @@
 // ### 0. Imports
 import './style.css';
 
-// ### 1. Functions
-// 1.1. Shorthand function for creating generic elements
-// elem = string, classes = array of string(s), parent = DOM element
-const addElem = (elem, classes, parent) => {
-  const createdElem = document.createElement(elem);
-  if (classes !== undefined) {
-    classes.forEach((cl) => createdElem.classList.add(cl));
-  }
-  parent.appendChild(createdElem);
-
-  return createdElem;
-};
-
-// ### 2. Data
+// ### 1. Data
 const taskList = [
   {
     description: 'Grocery shopping',
@@ -38,11 +25,9 @@ const taskList = [
   },
 ];
 
-// ### 3. DOM Manipulations
+// ### 2. DOM Manipulations
 const mainContainer = document.querySelector('.todo-list-container');
-// const titleContainer = addElem('div', [], mainContainer);
-// const title = addElem('h1', )
-// title.textContent = 'Today\'s To Do';
+
 mainContainer.innerHTML = `<div class="row">
 <h1>Today's To Do</h1>
 <i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
