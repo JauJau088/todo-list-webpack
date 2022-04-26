@@ -45,9 +45,19 @@ const mainContainer = document.querySelector('.todo-list-container');
 // title.textContent = 'Today\'s To Do';
 mainContainer.innerHTML = `<div class="row">
 <h1>Today's To Do</h1>
-<i class="fa-solid fa-rotate fa-xl font-awesome-icon"></i>
+<i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
+</div>
+<div>
+<input placeholder="Add to your list...">
 </div>`;
 
-taskList.forEach(() => {
-  mainContainer.innerHTML += ``;
+taskList.forEach((e) => {
+  let isChecked = null;
+  if (e.completed === true) isChecked = 'checked';
+
+  mainContainer.innerHTML += `<div class="row">
+  <input class="checkbox" type="checkbox" ${isChecked}>
+  <p>${e.description}</p>
+  <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
+  </div>`;
 });

@@ -15,6 +15,7 @@ html {
 }
 
 body {
+  background-color: rgba(240, 240, 240, 1);
   font-family: Barlow, Arial, sans-serif;
   color: rgba(50, 50, 50, 1);
 }
@@ -23,13 +24,32 @@ h1 {
   font-size: 1.5rem;
 }
 
+p {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+input:focus {
+  outline-color: grey;
+}
+
 /*  */
 .body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
   min-height: 100vh;
 }
 
@@ -37,16 +57,24 @@ h1 {
   width: 500px;
   max-width: 500px;
   background-color: white;
+  box-shadow: 0 0 30px rgba(150, 150, 150, 0.25);
 }
 
 .row {
   display: flex;
   justify-content: space-between;
-  padding: 1.5em 1em;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
 }
 
 .font-awesome-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.checkbox {
+  width: fit-content;
+  margin-right: 1rem;
 }
