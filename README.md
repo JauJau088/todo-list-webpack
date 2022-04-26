@@ -1,56 +1,41 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To-do List
 
-> Description the project.
+> "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. In this particular repo, I am building this To-do list with using ES6 and Webpack.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript (ES6)
+- Webpack
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
-
+🔥🔥 https://jaujau088.github.io/todo-list-webpack/ 🔥🔥
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+You can directly clone this repo and run the following.
 
 ### Prerequisites
 
+- Node.js
+- npm
+
 ### Setup
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+Once you clone the repo, go to the directory and run `npm install` command to get all necessary instalations.
 
 ## Authors
 
-👤 **Author1**
+👤 **Jauhari Alafi**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@JauJau088](https://github.com/JauJau088)
+- Twitter: [@jaujauj](https://twitter.com/jaujauj)
+- LinkedIn: [Jauhari Alafi](https://linkedin.com/in/jauhari-alafi-7295b821a/)
 
 ## 🤝 Contributing
 
