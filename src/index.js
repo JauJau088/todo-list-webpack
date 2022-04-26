@@ -64,3 +64,5 @@ taskList.forEach((e) => {
   <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
   </div>`;
 });
+
+mainContainer.innerHTML += `<button class="button">Clear all completed</button>`

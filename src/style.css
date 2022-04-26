@@ -20,6 +20,12 @@ body {
   color: rgba(50, 50, 50, 1);
 }
 
+button {
+  font-family: Barlow, Arial, sans-serif;
+  color: rgba(50, 50, 50, 1);
+  font-size: 1rem;
+}
+
 h1 {
   font-size: 1.5rem;
 }
@@ -64,6 +70,16 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
   padding: 1.5rem;
   border-bottom: 1px solid rgba(220, 220, 220, 1);
 }
