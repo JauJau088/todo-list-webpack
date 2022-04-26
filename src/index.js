@@ -52,7 +52,8 @@ mainContainer.innerHTML = `<div class="row">
 </div>`;
 
 taskList.forEach((e) => {
-  let isChecked, strikeThrough;
+  let isChecked;
+  let strikeThrough;
   if (e.completed === true) {
     isChecked = 'checked';
     strikeThrough = 'strike-through';
@@ -65,4 +66,4 @@ taskList.forEach((e) => {
   </div>`;
 });
 
-mainContainer.innerHTML += `<button class="button">Clear all completed</button>`
+mainContainer.innerHTML += '<button class="button">Clear all completed</button>';
