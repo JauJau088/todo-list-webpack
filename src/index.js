@@ -1,29 +1,18 @@
 // ### 0. Imports
 import './style.css';
+import isStorageAvailable from './modules/local-storage-checker.js';
+import Task from './modules/class-task.js';
 
 // ### 1. Data
-const taskList = [
-  {
-    description: 'Grocery shopping',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Study Webpack',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Complete Webpack projects',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Exercise',
-    completed: true,
-    index: 3,
-  },
-];
+let taskList = [];
+// If there's local data available,
+if (isStorageAvailable('localStorage')) {
+  const data = JSON.parse(localStorage.getItem('taskList'));
+  // and if it's not empty, update it
+  if (data) {
+    taskList = JSON.parse(localStorage.getItem('taskList'));
+  }
+}
 
 // ### 2. DOM Manipulations
 const mainContainer = document.querySelector('.todo-list-container');
