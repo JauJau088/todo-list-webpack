@@ -6,7 +6,7 @@ const storageName = 'taskList';
 export default class TaskList {
   constructor() {
     this.data = [];
-    this.id = 0;
+    this.id = 1;
     this.initUpdate();
   }
 
@@ -40,6 +40,7 @@ export default class TaskList {
 
   removeTask(taskID) {
     this.data = this.data.filter((i) => i.id !== taskID);
+    this.resetIds();
     localStorage.setItem(storageName, JSON.stringify(this.data));
   }
 
@@ -67,6 +68,16 @@ export default class TaskList {
 
   clearCompleted() {
     this.data = this.data.filter((i) => i.completed === false);
+    this.resetIds();
     localStorage.setItem(storageName, JSON.stringify(this.data));
+  }
+
+  resetIds() {
+    let i = 1;
+    this.data.forEach((e) => {
+      e.id = i;
+      i += 1;
+    });
+    this.id = i;
   }
 }
