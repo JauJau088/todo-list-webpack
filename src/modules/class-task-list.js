@@ -42,4 +42,19 @@ export default class TaskList {
     this.data = this.data.filter((i) => i.id !== taskID);
     localStorage.setItem(storageName, JSON.stringify(this.data));
   }
+
+  updateStatus(taskID, status) {
+    this.data = this.data.map((obj) => {
+      if (obj.id === taskID) {
+        return { ...obj, completed: status };
+      }
+
+      return obj;
+    });
+    localStorage.setItem(storageName, JSON.stringify(this.data));
+  }
+
+  renameTask(taskID, newTask) {
+    const target = this.data.find((i) => i.id === taskID);
+  }
 }

@@ -1,4 +1,5 @@
 import addElem from './add-elem.js';
+import Task from './class-task.js';
 
 // Refresh/ update list
 const refreshList = (_class, _container) => {
@@ -23,6 +24,7 @@ const refreshList = (_class, _container) => {
     const listIconTrash = addElem('i', ['fa-solid', 'fa-trash-can', 'fa-lg', 'font-awesome-icon'], removeButton);
 
     // Event listeners
+    const elemID = e.id;
     // Event listener for list appearance on click
     _container.addEventListener('click', () => {
       if (listText === document.activeElement) {
@@ -36,11 +38,15 @@ const refreshList = (_class, _container) => {
       }
     });
     // Event listener for remove button
-    const elemID = e.id;
     removeButton.onclick = () => {
       _class.removeTask(elemID);
       refreshList(_class, _container);
     };
+    // Event listener on checkbox (status change)
+    listCheckBox.addEventListener('click', () => {
+      _class.updateStatus(elemID, listCheckBox.checked);
+      refreshList(_class, _container);
+    });
   });
 };
 
