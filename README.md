@@ -12,10 +12,6 @@
 - JavaScript (ES6)
 - Webpack
 
-## Live Demo (if available)
-
-🔥🔥 https://jaujau088.github.io/todo-list-webpack/ 🔥🔥
-
 ## Getting Started
 
 You can directly clone this repo and run the following.
