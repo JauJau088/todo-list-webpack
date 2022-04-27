@@ -55,6 +55,13 @@ export default class TaskList {
   }
 
   renameTask(taskID, newTask) {
-    const target = this.data.find((i) => i.id === taskID);
+    this.data = this.data.map((obj) => {
+      if (obj.id === taskID) {
+        return { ...obj, description: newTask };
+      }
+
+      return obj;
+    });
+    localStorage.setItem(storageName, JSON.stringify(this.data));
   }
 }
