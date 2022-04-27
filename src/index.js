@@ -3,28 +3,21 @@ import './style.css';
 import addElem from './modules/add-elem.js';
 import isStorageAvailable from './modules/local-storage-checker.js';
 import Task from './modules/class-task.js';
+import TaskList from './modules/class-task-list.js';
 
 // ### 1. Data
-let taskList = [];
-// If there's local data available,
-if (isStorageAvailable('localStorage')) {
-  const data = JSON.parse(localStorage.getItem('taskList'));
-  // and if it's not empty, update it
-  if (data) {
-    taskList = JSON.parse(localStorage.getItem('taskList'));
-  }
-}
+const taskList = new TaskList();
 
 // ### 2. DOM Manipulations
 const mainContainer = document.querySelector('.todo-list-container');
 
-// HTML skeleton
+// 2.1. HTML skeleton
 // Header (Title and input)
 mainContainer.innerHTML = `<div class="row">
 <h1>Today's To Do</h1>
 <i class="fa-solid fa-rotate fa-lg font-awesome-icon"></i>
 </div>`;
-const inputContainer = addElem('div', [], mainContainer);
+const inputContainer = addElem('form', [], mainContainer);
 const inputText = addElem('input', [], inputContainer);
 inputText.setAttribute('placeholder', 'Add to your list...');
 // Main (list)
@@ -33,10 +26,16 @@ const listContainer = addElem('div', [], mainContainer);
 const clearButton = addElem('button', ['button'], mainContainer);
 clearButton.textContent = 'Clear all completed';
 
-// 
+// 2.2. Input functionalities
+inputContainer.onsubmit = (e) => {
+  e.preventDefault();
+  taskList.addTask(inputText.value);
 
-// Dynamic list
-taskList.forEach((e) => {
+  inputContainer.reset();
+};
+
+// 2.3. Dynamic list
+taskList.data.forEach((e) => {
   let isChecked;
   let strikeThrough;
   if (e.completed === true) {
