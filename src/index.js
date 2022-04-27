@@ -21,12 +21,13 @@ const inputText = addElem('input', ['input-add-task'], inputContainer);
 inputText.setAttribute('placeholder', 'Add to your list...');
 addElem('i', ['fa-solid', 'fa-arrow-right-to-bracket', 'fa-sm', 'font-awesome-icon'], inputContainer);
 // Main (list)
+// All of main's functionalities are handled by refreshList module
 const listContainer = addElem('div', [], mainContainer);
 // Bottom (button)
 const clearButton = addElem('button', ['button'], mainContainer);
 clearButton.textContent = 'Clear all completed';
 
-// 2.2. Input functionalities
+// 2.1.1. Input functionalities
 inputContainer.onsubmit = (e) => {
   e.preventDefault();
   taskList.addTask(inputText.value);
@@ -35,5 +36,12 @@ inputContainer.onsubmit = (e) => {
   refreshList(taskList, listContainer);
 };
 
-// 2.3. Dynamic list
+// 2.1.2. clear button
+clearButton.onclick = () => {
+  // console.log('clear');
+  taskList.clearCompleted();
+  refreshList(taskList, listContainer);
+};
+
+// On load
 refreshList(taskList, listContainer);

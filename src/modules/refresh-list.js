@@ -26,7 +26,7 @@ const refreshList = (_class, _container) => {
     // Event listeners
     const elemID = e.id;
     // Event listener for list appearance on click
-    _container.addEventListener('click', () => {
+    document.body.addEventListener('click', () => {
       if (listText === document.activeElement) {
         listIconDots.classList.add('hide');
         removeButton.classList.remove('hide');

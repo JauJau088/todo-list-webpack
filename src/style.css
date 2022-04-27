@@ -24,6 +24,7 @@ button {
   font-family: Barlow, Arial, sans-serif;
   color: rgba(50, 50, 50, 1);
   font-size: 1rem;
+  cursor: pointer;
 }
 
 h1 {
@@ -110,6 +111,11 @@ input:focus {
   border: none;
   padding: 1.5rem;
   border-bottom: 1px solid rgba(220, 220, 220, 1);
+  transition: background-color 500ms ease-out;
+}
+
+.button:active {
+  background-color: rgba(210, 210, 210, 1);
 }
 
 .font-awesome-icon {

@@ -15,7 +15,7 @@ export default class TaskList {
     if (isStorageAvailable('localStorage')) {
       const data = JSON.parse(localStorage.getItem(storageName));
       // and if it's not empty, update it
-      if (data) {
+      if (data && data.length !== 0) {
         this.data = JSON.parse(localStorage.getItem(storageName));
         // Update id according to the biggest one from storage
         const lastItem = this.data.reduce((prev, current) => {
@@ -62,6 +62,11 @@ export default class TaskList {
 
       return obj;
     });
+    localStorage.setItem(storageName, JSON.stringify(this.data));
+  }
+
+  clearCompleted() {
+    this.data = this.data.filter((i) => i.completed === false);
     localStorage.setItem(storageName, JSON.stringify(this.data));
   }
 }
