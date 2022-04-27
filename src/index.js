@@ -2,6 +2,7 @@
 import './style.css';
 import addElem from './modules/add-elem.js';
 import TaskList from './modules/class-task-list.js';
+import refreshList from './modules/refresh-list.js';
 
 // ### 1. Data
 const taskList = new TaskList();
@@ -31,42 +32,8 @@ inputContainer.onsubmit = (e) => {
   taskList.addTask(inputText.value);
 
   inputContainer.reset();
+  refreshList(taskList, listContainer);
 };
 
 // 2.3. Dynamic list
-taskList.data.forEach((e) => {
-  let isChecked;
-  let strikeThrough;
-  if (e.completed === true) {
-    isChecked = 'checked';
-    strikeThrough = 'strike-through';
-  }
-
-  // listContainer.innerHTML += `<div class="row todo-list">
-  // <input class="checkbox" type="checkbox" ${isChecked}>
-  // <input class="${strikeThrough}" value="${e.description}">
-  // <i class="fa-solid fa-ellipsis-vertical fa-lg font-awesome-icon"></i>
-  // </div>`;
-
-  const todoList = addElem('div', ['row', 'todo-list'], listContainer);
-  const listCheckBox = addElem('input', ['checkbox'], todoList);
-  listCheckBox.setAttribute('type', 'checkbox');
-  listCheckBox.setAttribute(isChecked, '');
-  const listText = addElem('input', ['list-text', strikeThrough], todoList);
-  listText.value = e.description;
-  const listIconDots = addElem('i', ['fa-solid', 'fa-ellipsis-vertical', 'fa-lg', 'font-awesome-icon'], todoList);
-  const listIconTrash = addElem('i', ['fa-solid', 'fa-trash-can', 'fa-lg', 'font-awesome-icon', 'hide'], todoList);
-
-  // Event listener
-  listContainer.addEventListener('click', () => {
-    if (listText === document.activeElement) {
-      listIconDots.classList.add('hide');
-      listIconTrash.classList.remove('hide');
-      todoList.style.backgroundColor = '#fffdcc';
-    } else {
-      listIconDots.classList.remove('hide');
-      listIconTrash.classList.add('hide');
-      todoList.style.backgroundColor = 'transparent';
-    }
-  });
-});
+refreshList(taskList, listContainer);

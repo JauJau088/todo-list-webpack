@@ -97,6 +97,11 @@ input:focus {
   width: 20px;
 }
 
+.remove-button {
+  border: none;
+  height: 18px;
+}
+
 .button {
   display: flex;
   justify-content: center;

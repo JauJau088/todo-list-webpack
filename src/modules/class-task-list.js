@@ -6,7 +6,7 @@ const storageName = 'taskList';
 export default class TaskList {
   constructor() {
     this.data = [];
-    this.length = 0;
+    this.id = 0;
     this.initUpdate();
   }
 
@@ -17,18 +17,29 @@ export default class TaskList {
       // and if it's not empty, update it
       if (data) {
         this.data = JSON.parse(localStorage.getItem(storageName));
+        // Update id according to the biggest one from storage
+        const lastItem = this.data.reduce((prev, current) => {
+          const val = prev.id > current.id ? prev : current;
+          return val;
+        });
+        this.id = lastItem.id + 1;
       }
     }
   }
 
   addTask(task) {
     if (isStorageAvailable) {
-      const taskObj = new Task(task, this.length);
+      const taskObj = new Task(task, this.id);
 
       this.data.push(taskObj);
       localStorage.setItem(storageName, JSON.stringify(this.data));
 
-      this.length += 1;
+      this.id += 1;
     }
+  }
+
+  removeTask(taskID) {
+    this.data = this.data.filter((i) => i.id !== taskID);
+    localStorage.setItem(storageName, JSON.stringify(this.data));
   }
 }
