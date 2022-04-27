@@ -24,6 +24,7 @@ button {
   font-family: Barlow, Arial, sans-serif;
   color: rgba(50, 50, 50, 1);
   font-size: 1rem;
+  cursor: pointer;
 }
 
 h1 {
@@ -34,12 +35,23 @@ p {
   width: 100%;
 }
 
+form {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(220, 220, 220, 1);
+}
+
+form i {
+  color: rgba(150, 150, 150, 1);
+  padding-right: 1.5rem;
+}
+
 input {
   width: 100%;
   border: none;
-  padding: 1.5rem;
   font-size: 1rem;
-  border-bottom: 1px solid rgba(220, 220, 220, 1);
+  color: rgba(50, 50, 50, 1);
+  background-color: transparent;
 }
 
 input::placeholder {
@@ -47,7 +59,7 @@ input::placeholder {
 }
 
 input:focus {
-  outline-color: grey;
+  outline: none;
 }
 
 /* Main */
@@ -57,6 +69,10 @@ input:focus {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.hide {
+  display: none !important;
 }
 
 .todo-list-container {
@@ -74,6 +90,19 @@ input:focus {
   border-bottom: 1px solid rgba(220, 220, 220, 1);
 }
 
+.input-add-task {
+  padding: 1.5rem;
+}
+
+.todo-list i {
+  width: 20px;
+}
+
+.remove-button {
+  border: none;
+  height: 18px;
+}
+
 .button {
   display: flex;
   justify-content: center;
@@ -82,6 +111,11 @@ input:focus {
   border: none;
   padding: 1.5rem;
   border-bottom: 1px solid rgba(220, 220, 220, 1);
+  transition: background-color 500ms ease-out;
+}
+
+.button:active {
+  background-color: rgba(210, 210, 210, 1);
 }
 
 .font-awesome-icon {
