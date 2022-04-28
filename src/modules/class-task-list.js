@@ -27,6 +27,12 @@ export default class TaskList {
     }
   }
 
+  updateData(newData) {
+    this.data = newData;
+    this.resetIds();
+    localStorage.setItem(storageName, JSON.stringify(this.data));
+  }
+
   addTask(task) {
     if (isStorageAvailable) {
       const taskObj = new Task(task, this.id);
