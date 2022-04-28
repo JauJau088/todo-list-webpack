@@ -62,6 +62,10 @@ input:focus {
   outline: none;
 }
 
+footer {
+  display: none;
+}
+
 /* Main */
 .body {
   display: flex;
