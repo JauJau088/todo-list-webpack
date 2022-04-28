@@ -28,8 +28,6 @@ const listContainer = addElem('div', [], mainContainer);
 // Bottom (button)
 const clearButton = addElem('button', ['button'], mainContainer);
 clearButton.textContent = 'Clear all completed';
-// End of body
-document.body.innerHTML += '<script src="https://kit.fontawesome.com/a11f8b435e.js" crossorigin="anonymous"></script>';
 
 // 2.1.1. Input functionalities
 inputContainer.onsubmit = (e) => {
