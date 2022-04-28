@@ -13,7 +13,8 @@ const refreshList = (_class, _container) => {
       strikeThrough = 'strike-through';
     }
 
-    const todoList = addElem('div', ['row', 'todo-list'], _container);
+    const todoList = addElem('div', ['row', 'todo-list', 'draggable'], _container);
+    todoList.setAttribute('draggable', 'true');
     const listCheckBox = addElem('input', ['checkbox'], todoList);
     listCheckBox.setAttribute('type', 'checkbox');
     listCheckBox.setAttribute(isChecked, '');
@@ -53,6 +54,13 @@ const refreshList = (_class, _container) => {
         _class.renameTask(elemID, listText.value);
         refreshList(_class, _container);
       }
+    });
+    // Event listener on drag and drop
+    todoList.addEventListener('dragstart', () => {
+      todoList.classList.add('dragging');
+    });
+    todoList.addEventListener(('dragend'), () => {
+      todoList.classList.remove('dragging');
     });
   });
 };
