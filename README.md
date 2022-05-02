@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-:fire::fire: https://jaujau088.github.io/todo-list-webpack/ :fire::fire:
+:fire::fire: https://jaujau088.github.io/todo-list-webpack/dist/ :fire::fire:
 
 ## Built With
 
