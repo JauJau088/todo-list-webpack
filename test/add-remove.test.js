@@ -41,6 +41,22 @@ describe('Check if localStorage is being used properly:', () => {
   });
 
   describe('Remove items:', () => {
-
+    test(`remove task: "${task1}"`, () => {
+      taskList.removeTask(1);
+      // check the value in the local storage
+      expect(JSON.parse(localStorage.getItem(storageName)))
+        . toEqual([
+          { description: task2, id: 1, completed: false },
+          { description: task3, id: 2, completed: false },
+        ]);
+    });
+    test(`remove task: "${task3}"`, () => {
+      taskList.removeTask(2);
+      // check the value in the local storage
+      expect(JSON.parse(localStorage.getItem(storageName)))
+        . toEqual([
+          { description: task2, id: 1, completed: false },
+        ]);
+    });
   });
 });

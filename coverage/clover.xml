@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651743222127" clover="3.2.0">
-  <project timestamp="1651743222128" name="All files">
-    <metrics statements="49" coveredstatements="17" conditionals="22" coveredconditionals="4" methods="16" coveredmethods="5" elements="87" coveredelements="26" complexity="0" loc="49" ncloc="49" packages="1" files="3" classes="3"/>
-    <file name="class-task-list.js" path="/mnt/d/+ Microverse/Projects/Module 2/todo-list-testing/src/modules/class-task-list.js">
-      <metrics statements="38" coveredstatements="10" conditionals="14" coveredconditionals="2" methods="14" coveredmethods="3"/>
+<coverage generated="1651744423079" clover="3.2.0">
+  <project timestamp="1651744423079" name="All files">
+    <metrics statements="49" coveredstatements="25" conditionals="22" coveredconditionals="4" methods="16" coveredmethods="9" elements="87" coveredelements="38" complexity="0" loc="49" ncloc="49" packages="1" files="3" classes="3"/>
+    <file name="class-task-list.js" path="C:\Users\User\Desktop\todo-list-webpack\src\modules\class-task-list.js">
+      <metrics statements="38" coveredstatements="18" conditionals="14" coveredconditionals="2" methods="14" coveredmethods="7"/>
       <line num="4" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
@@ -21,9 +21,9 @@
       <line num="34" count="3" type="stmt"/>
       <line num="35" count="3" type="stmt"/>
       <line num="37" count="3" type="stmt"/>
-      <line num="42" count="0" type="stmt"/>
-      <line num="43" count="0" type="stmt"/>
-      <line num="44" count="0" type="stmt"/>
+      <line num="42" count="5" type="stmt"/>
+      <line num="43" count="2" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
       <line num="48" count="0" type="stmt"/>
       <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="50" count="0" type="stmt"/>
@@ -37,19 +37,19 @@
       <line num="70" count="0" type="stmt"/>
       <line num="71" count="0" type="stmt"/>
       <line num="72" count="0" type="stmt"/>
-      <line num="76" count="0" type="stmt"/>
-      <line num="77" count="0" type="stmt"/>
-      <line num="78" count="0" type="stmt"/>
-      <line num="79" count="0" type="stmt"/>
-      <line num="81" count="0" type="stmt"/>
+      <line num="76" count="2" type="stmt"/>
+      <line num="77" count="2" type="stmt"/>
+      <line num="78" count="3" type="stmt"/>
+      <line num="79" count="3" type="stmt"/>
+      <line num="81" count="2" type="stmt"/>
     </file>
-    <file name="class-task.js" path="/mnt/d/+ Microverse/Projects/Module 2/todo-list-testing/src/modules/class-task.js">
+    <file name="class-task.js" path="C:\Users\User\Desktop\todo-list-webpack\src\modules\class-task.js">
       <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <line num="3" count="3" type="stmt"/>
       <line num="4" count="3" type="stmt"/>
       <line num="5" count="3" type="stmt"/>
     </file>
-    <file name="local-storage-checker.js" path="/mnt/d/+ Microverse/Projects/Module 2/todo-list-testing/src/modules/local-storage-checker.js">
+    <file name="local-storage-checker.js" path="C:\Users\User\Desktop\todo-list-webpack\src\modules\local-storage-checker.js">
       <metrics statements="8" coveredstatements="4" conditionals="7" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
