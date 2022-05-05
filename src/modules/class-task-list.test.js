@@ -1,4 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import TaskList, { storageName } from './class-task-list.js';
+import refreshList from './refresh-list.js';
 
 const taskList = new TaskList();
 const task1 = 'This is task 1';
@@ -43,4 +48,12 @@ describe('Check whether add and remove methods update the local storage properly
 
   //   expect(localStorage.setItem).toHaveBeenCalled();
   // });
+});
+
+test('should ', () => {
+  refreshList(taskList, document.body);
+  const validateElements = document.querySelectorAll('.todo-list');
+
+  expect(validateElements.length)
+    .toEqual(2);
 });
