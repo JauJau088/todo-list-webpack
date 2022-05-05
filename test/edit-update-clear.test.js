@@ -19,6 +19,7 @@ beforeAll(() => {
 });
 
 describe('Check if edit, update, and clear are working as intended:', () => {
+  // 1. Edit
   describe('Edit', () => {
     // Local storage
     test(`localStorage edit task: "${task2}" to "${task2New}"`, () => {
@@ -31,7 +32,6 @@ describe('Check if edit, update, and clear are working as intended:', () => {
           { description: task3, id: 3, completed: false },
         ]);
     });
-
     // DOM
     test(`DOM edit task: "${task2}" to "${task2New}"`, () => {
       refreshList(taskList, document.body);
@@ -43,6 +43,7 @@ describe('Check if edit, update, and clear are working as intended:', () => {
         .toBe(task2New);
     });
   });
+  // 2. Update status
   describe('Update status of task :', () => {
     // local storage
     test(`localStorage update task: "${task2New}" to completed`, () => {
@@ -64,6 +65,28 @@ describe('Check if edit, update, and clear are working as intended:', () => {
 
       expect(task2NewCheckBox.checked)
         .toBe(true);
+    });
+  });
+  // 3. Clear all completed
+  describe('Clear all completed tasks:', () => {
+    // Local storage
+    test(`localStorage clear completed tasks ("${task2New}")`, () => {
+      taskList.clearCompleted();
+
+      expect(JSON.parse(localStorage.getItem(storageName)))
+        .toEqual([
+          { description: task1, id: 1, completed: false },
+          { description: task3, id: 2, completed: false },
+        ]);
+    });
+    // DOM
+    test(`DOM clear completed tasks ("${task2New}")`, () => {
+      refreshList(taskList, document.body);
+
+      const validateElements = document.querySelectorAll('.todo-list');
+
+      expect(validateElements.length)
+        .toBe(2);
     });
   });
 });
