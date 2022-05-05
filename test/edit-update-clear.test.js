@@ -43,4 +43,27 @@ describe('Check if edit, update, and clear are working as intended:', () => {
         .toBe(task2New);
     });
   });
+  describe('Update status of task :', () => {
+    // local storage
+    test(`localStorage update task: "${task2New}" to completed`, () => {
+      taskList.updateStatus(2, true);
+
+      expect(JSON.parse(localStorage.getItem(storageName)))
+        .toEqual([
+          { description: task1, id: 1, completed: false },
+          { description: task2New, id: 2, completed: true },
+          { description: task3, id: 3, completed: false },
+        ]);
+    });
+    // DOM
+    test(`DOM update status of the task: "${task2New}" to completed`, () => {
+      refreshList(taskList, document.body);
+
+      const task2NewElement = document.querySelectorAll('.todo-list')[1];
+      const task2NewCheckBox = task2NewElement.querySelector('.checkbox');
+
+      expect(task2NewCheckBox.checked)
+        .toBe(true);
+    });
+  });
 });
