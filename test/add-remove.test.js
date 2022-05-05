@@ -75,8 +75,9 @@ describe('Check if the localStorage and the DOM are being used as intended:', ()
     });
   });
 
+  // remove items
   describe('Remove items:', () => {
-    test(`remove task: "${task1}"`, () => {
+    test(` localStorage remove task: "${task1}"`, () => {
       taskList.removeTask(1);
       // check the value in the local storage
       expect(JSON.parse(localStorage.getItem(storageName)))
@@ -85,13 +86,30 @@ describe('Check if the localStorage and the DOM are being used as intended:', ()
           { description: task3, id: 2, completed: false },
         ]);
     });
-    test(`remove task: "${task3}"`, () => {
+    // DOM Remove 1
+    test(`DOM remove task: "${task1}"`, () => {
+      refreshList(taskList, document.body);
+      const validateElements = document.querySelectorAll('.todo-list');
+
+      expect(validateElements.length)
+        .toBe(2);
+    });
+
+    test(`localStorage remove task: "${task3}"`, () => {
       taskList.removeTask(2);
       // check the value in the local storage
       expect(JSON.parse(localStorage.getItem(storageName)))
         . toEqual([
           { description: task2, id: 1, completed: false },
         ]);
+    });
+    // DOM Remove 2
+    test(`DOM remove task: "${task3}"`, () => {
+      refreshList(taskList, document.body);
+      const validateElements = document.querySelectorAll('.todo-list');
+
+      expect(validateElements.length)
+        .toBe(1);
     });
   });
 });
