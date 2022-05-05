@@ -26,7 +26,38 @@ You can directly clone this repo and run the following.
 
 ### Setup
 
-Once you clone the repo, go to the directory and run `npm install` command to get all necessary instalations.
+```
+git clone git@github.com:JauJau088/todo-list-webpack.git
+cd todo-list-webpack
+```
+
+- cd into the project directory
+
+```
+Open the project using a live sever extension that can be found within your code editor extensions.
+```
+
+- Once you clone the repo, go to the directory and run `npm install` command to get all necessary instalations.
+
+- build project (not necessary, but might be needed encase going straight to starting the project fails).
+
+```
+npm run build
+```
+
+- start project
+
+```
+npm start
+```
+
+## Running tests
+
+```
+npm run test
+```
+
+- ...in your bash (assuming your in the root of this project);
 
 ## Authors
 
@@ -42,7 +73,15 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
-## Show your support
+### Contributors
+
+Special thanks to the following contributors:
+
+👤 **Mandela Tumukunde**
+
+- GitHub: [@mandelatuks](https://github.com/mandelatuks)
+- Twitter: [@MandelaTm1](https://twitter.com/MandelaTm1)
+- LinkedIn: [@Mandela Tumukunde](https://www.linkedin.com/in/mandela-tumukunde-794755194/)
 
 Give a ⭐️ if you like this project!
 
