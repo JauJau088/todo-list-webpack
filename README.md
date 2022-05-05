@@ -2,7 +2,7 @@
 
 # To-do List
 
-> "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. In this particular repo, I am building this To-do list with using ES6 and Webpack.
+> "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. In this particular repo, We are building this To-do list with using HTML, CSS, JavaScript (ES6), and Webpack and we use Jest framework for the testing.
 
 ## Live Demo
 
@@ -14,6 +14,7 @@
 - CSS
 - JavaScript (ES6)
 - Webpack
+- Jest
 
 ## Getting Started
 
@@ -39,13 +40,14 @@ Open the project using a live sever extension that can be found within your code
 
 - Once you clone the repo, go to the directory and run `npm install` command to get all necessary instalations.
 
-- build project (not necessary, but might be needed encase going straight to starting the project fails).
+- Build/ watch project (not necessary, but might be needed in case you make some changes in the src folder).
 
 ```
 npm run build
+npm run watch
 ```
 
-- start project
+- Run Webpack live server
 
 ```
 npm start
@@ -57,9 +59,9 @@ npm start
 npm run test
 ```
 
-- ...in your bash (assuming your in the root of this project);
+- ...in your bash (assuming you are in the root of this project);
 
-## Authors
+## Author
 
 👤 **Jauhari Alafi**
 
@@ -87,9 +89,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+These packages are super useful for handling the `localStorage` and `DOM` mocks so that we don't have to create them by ourselves:
+- npm [jest-localstorage-mock](https://www.npmjs.com/package/jest-localstorage-mock) package
+- npm [jest-environment-jsdom](https://www.npmjs.com/package/jest-environment-jsdom) package
 
 ## 📝 License
 
